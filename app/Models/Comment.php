@@ -13,5 +13,11 @@ class Comment extends Model
         'body'
     ];
     protected $timestamps = true;
+ public function normaluser(){
+    return $this ->belongsTo(NormalUser::class,"normal_user_id");// should be in comment table 
+ }
 
+ public function post(){
+    return $this->belongsTo(Post::class,"post_id"); //should be in comment table 
+ }
 }

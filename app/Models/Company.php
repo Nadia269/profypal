@@ -14,4 +14,10 @@ class Company extends Model
     ];
     protected $timestamps = true;
 
+     public function application(){
+        return $this ->hasMany(Application::class);
+     }
+     public function user(){
+        return $this -> belongsToMany(User::class,"users_company");//should add?
+     }
 }

@@ -14,4 +14,8 @@ class Follow extends Model
     ];
     protected $timestamps = true;
 
+    public function user(){
+        return $this ->belongsToMany(User::class,"users_follow");// should add ?
+    }
+
 }

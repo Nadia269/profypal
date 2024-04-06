@@ -50,4 +50,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function company(){
+        return $this ->belongsToMany(Company::class,"users_company"); // should add ?
+    }
+    public function follow(){
+        return $this ->belongsToMany(Follow::class,"users_follow"); //should add ?
+    }
+    public function normaluser(){
+        return $this ->belongsToMany(NormalUser::class,"users_normaluser");// should add ?
+    }
 }

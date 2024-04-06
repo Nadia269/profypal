@@ -13,5 +13,8 @@ class Post extends Model
         'body' , 'image' , 'num_of_likes'
     ];
     protected $timestamps = true;
-
+  
+     public function comment(){
+        return $this ->hasMany(Comment::class,"post_id");// should add ?
+     }
 }
